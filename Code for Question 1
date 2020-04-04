@@ -1,0 +1,14 @@
+# Import necessary packages
+import numpy as np
+import scipy.linalg as alg
+
+# Define the one year transition matrix as P
+P = np.array([[0.8, 0.1, 0.1, 0], [0.1, 0.5, 0.2, 0.2], [0.1, 0.3, 0.3, 0.3],[0, 0, 0, 1]])
+
+# Calculate the two years transition matrix as P^2
+P_2 = np.linalg.matrix_power(P, 2)
+print(P_2)
+
+# Calculate the one month transition matrix as P^(1/12)
+P_month = alg.fractional_matrix_power(P, 1/12)
+print(P_month)
